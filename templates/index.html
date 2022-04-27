@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/main.css">
+	<title>main explorers</title>
+</head>
+<body>
+    <div class="header">
+        <h1>lokator</h1>
+        <p>Your Favourite Croatian GeoGuessr Agent</p>
+    </div>
+    <h2>Upload one or multiple images from your location</h2>
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    
+    <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="files[]" multiple="true" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+    
+    <!-- {% if filenames %}
+        <div class="row">
+            {% for filename in filenames %}
+            <div class="column">
+                <img src="{{ url_for('display_image', filename=filename) }}">
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %} -->
+</body>
+</html>

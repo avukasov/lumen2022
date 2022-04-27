@@ -1,0 +1,42 @@
+.header {
+    padding: 20px;
+    text-align: center;
+    background-image: url("cro_map_2.png");
+    background-size: cover;
+    background-position: 10%;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+* {
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .column {
+    float: left;
+    width: 25.0%;
+    padding: 5px;
+  }
+
+  .column2 {
+    float: center;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: inline-block;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+  div {
+    text-align: center;
+  }
+  
